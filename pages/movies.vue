@@ -59,10 +59,11 @@
                   </template>
                 </v-img>
               </v-col>
-              <v-col xl="8" lg="8" md="8" sm="12" xs="12">
+              <v-col cols="12" xl="8" lg="8" md="8" sm="12" xs="12">
                 <div class="justify-space-between">
                   <v-card-title
                     v-text="$store.state.movie.Title"
+                    style="word-break: break-word;"
                   ></v-card-title>
                   <span
                     v-for="(key, i) in Object.keys($store.state.movie)"
@@ -116,6 +117,7 @@
         <v-col
           v-for="(movie, i) in $store.state.movies"
           :key="i"
+          cols="12"
           xl="4"
           lg="4"
           md="6"
@@ -140,7 +142,10 @@
                   </v-row>
                 </template>
               </v-img>
-              <v-card-title v-text="movie.Title"></v-card-title>
+              <v-card-title
+                v-text="movie.Title"
+                style="word-break: break-word;"
+              ></v-card-title>
               <v-card-subtitle class="pb-0"
                 >Type: {{ movie.Type }}<br />Year:
                 {{ movie.Year }}</v-card-subtitle
